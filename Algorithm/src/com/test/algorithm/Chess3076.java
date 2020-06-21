@@ -6,25 +6,24 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.StringTokenizer;
 
+/**
+ * 
+ * @author shin
+ *
+ */
 public class Chess3076 {
 	
-	//¹éÁØ 3076 ¹®Á¦ »ó±ÙÀÌÀÇ Ã¼½ºÆÇ
+	//ë°±ì¤€ 3076 ë¬¸ì œ ìƒê·¼ì´ì˜ ì²´ìŠ¤íŒ
 	/*
-	 »ó±ÙÀÌ´Â Ã¼½ºÆÇÀ» ¸¸µé·Á°í ÇÑ´Ù.
-
-	Ã¼½ºÆÇÀº °ËÁ¤Ä­°ú ÈòÄ­À¸·Î ÀÌ·ç¾îÁ® ÀÖ´Ù. °¡Àå ¿ŞÂÊ À§Ä­ÀÇ »öÀº °ËÁ¤»öÀÌ°í, ³ª¸ÓÁö »öÀº °ËÁ¤°ú Èò»öÀÌ ¹ø°¥¾Æ°¡¸é¼­ µîÀåÇÑ´Ù. °ËÁ¤»öÀº 'X'·Î, Èò»öÀº '.'·Î Ç¥½ÃÇÑ´Ù.
-
-	»ó±ÙÀÌÀÇ Ã¼½ºÆÇÀº RÇà * C¿­·Î ÀÌ·ç¾îÁ® ÀÖ¾î¾ß ÇÑ´Ù. ¶Ç, °¢°¢ÀÇ ÇàÀÇ ³ôÀÌ´Â ¹®ÀÚ A°³¸¸Å­ ÀÌ¸ç, °¢°¢ÀÇ ¿­ÀÇ ³Êºñ´Â ¹®ÀÚ B°³ ¸¸Å­ÀÌ´Ù. ¿¹Á¦ Ãâ·ÂÀ» º¸°í ÀÌÇØÇÏ¸é ½±´Ù.
-
-	R, C, A, B°¡ ÁÖ¾îÁ³À» ¶§, »ó±ÙÀÌÀÇ Ã¼½ºÆÇÀ» Ãâ·ÂÇÏ´Â ÇÁ·Î±×·¥À» ÀÛ¼ºÇÏ½Ã¿À.
-
-	ÀÔ·Â
-	Ã¹Â° ÁÙ¿¡ µÎ ¾çÀÇ Á¤¼ö R°ú C°¡ ÁÖ¾îÁø´Ù. (1 ¡Â R, C ¡Â 10)
-
-	µÑÂ° ÁÙ¿¡ µÎ ¾çÀÇ Á¤¼ö A¿Í B°¡ ÁÖ¾îÁø´Ù. (1 ¡Â A, B ¡Â 10)
-
-	Ãâ·Â
-	Ãâ·ÂÀº R * AÇà C * B¿­·Î ÀÌ·ç¾îÁ® ÀÖ¾î¾ß ÇÏ¸ç, ¹®Á¦¿¡¼­ ¼³¸íÇÑ »ó±ÙÀÌÀÇ Ã¼½ºÆÇÀ» Ãâ·ÂÇÑ´Ù.
+	 ìƒê·¼ì´ëŠ” ì²´ìŠ¤íŒì„ ë§Œë“¤ë ¤ê³  í•œë‹¤.
+	ì²´ìŠ¤íŒì€ ê²€ì •ì¹¸ê³¼ í°ì¹¸ìœ¼ë¡œ ì´ë£¨ì–´ì ¸ ìˆë‹¤. ê°€ì¥ ì™¼ìª½ ìœ„ì¹¸ì˜ ìƒ‰ì€ ê²€ì •ìƒ‰ì´ê³ , ë‚˜ë¨¸ì§€ ìƒ‰ì€ ê²€ì •ê³¼ í°ìƒ‰ì´ ë²ˆê°ˆì•„ê°€ë©´ì„œ ë“±ì¥í•œë‹¤. ê²€ì •ìƒ‰ì€ 'X'ë¡œ, í°ìƒ‰ì€ '.'ë¡œ í‘œì‹œí•œë‹¤.
+	ìƒê·¼ì´ì˜ ì²´ìŠ¤íŒì€ Rí–‰ * Cì—´ë¡œ ì´ë£¨ì–´ì ¸ ìˆì–´ì•¼ í•œë‹¤. ë˜, ê°ê°ì˜ í–‰ì˜ ë†’ì´ëŠ” ë¬¸ì Aê°œë§Œí¼ ì´ë©°, ê°ê°ì˜ ì—´ì˜ ë„ˆë¹„ëŠ” ë¬¸ì Bê°œ ë§Œí¼ì´ë‹¤. ì˜ˆì œ ì¶œë ¥ì„ ë³´ê³  ì´í•´í•˜ë©´ ì‰½ë‹¤.
+	R, C, A, Bê°€ ì£¼ì–´ì¡Œì„ ë•Œ, ìƒê·¼ì´ì˜ ì²´ìŠ¤íŒì„ ì¶œë ¥í•˜ëŠ” í”„ë¡œê·¸ë¨ì„ ì‘ì„±í•˜ì‹œì˜¤.
+	ì…ë ¥
+	ì²«ì§¸ ì¤„ì— ë‘ ì–‘ì˜ ì •ìˆ˜ Rê³¼ Cê°€ ì£¼ì–´ì§„ë‹¤. (1 â‰¤ R, C â‰¤ 10)
+	ë‘˜ì§¸ ì¤„ì— ë‘ ì–‘ì˜ ì •ìˆ˜ Aì™€ Bê°€ ì£¼ì–´ì§„ë‹¤. (1 â‰¤ A, B â‰¤ 10)
+	ì¶œë ¥
+	ì¶œë ¥ì€ R * Aí–‰ C * Bì—´ë¡œ ì´ë£¨ì–´ì ¸ ìˆì–´ì•¼ í•˜ë©°, ë¬¸ì œì—ì„œ ì„¤ëª…í•œ ìƒê·¼ì´ì˜ ì²´ìŠ¤íŒì„ ì¶œë ¥í•œë‹¤.
 	
 	
 	5 5
@@ -49,18 +48,18 @@ public class Chess3076 {
 	
 	
 	public static void main(String[] args) throws Exception{
-		//Ç®ÀÌ
+		//í’€ì´
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 	
 		StringTokenizer stk1 = new StringTokenizer(br.readLine());
-		int r = Integer.parseInt(stk1.nextToken());//Çà
-		int c = Integer.parseInt(stk1.nextToken());//¿­
+		int r = Integer.parseInt(stk1.nextToken());//í–‰
+		int c = Integer.parseInt(stk1.nextToken());//ì—´
 		
 		StringTokenizer stk2 = new StringTokenizer(br.readLine());
-		int a = Integer.parseInt(stk2.nextToken());//ÇÑÄ­ÀÇ Çà
-		int b = Integer.parseInt(stk2.nextToken());//ÇÑÄ­ÀÇ ¿­
+		int a = Integer.parseInt(stk2.nextToken());//í•œì¹¸ì˜ í–‰
+		int b = Integer.parseInt(stk2.nextToken());//í•œì¹¸ì˜ ì—´
 		
 		String[] arr = {"X","."};
 		

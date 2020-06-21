@@ -9,34 +9,33 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
-
+/**
+ * 
+ * @author shin
+ *
+ */
 public class PrinterQ1966 {
 	
 	/*
-
-
-	¹®Á¦
-	¿©·¯ºÐµµ ¾Ë´Ù½ÃÇÇ ¿©·¯ºÐÀÇ ÇÁ¸°ÅÍ ±â±â´Â ¿©·¯ºÐÀÌ ÀÎ¼âÇÏ°íÀÚ ÇÏ´Â ¹®¼­¸¦ ÀÎ¼â ¸í·ÉÀ» ¹ÞÀº ¡®¼ø¼­´ë·Î¡¯, Áï ¸ÕÀú ¿äÃ»µÈ °ÍÀ» ¸ÕÀú ÀÎ¼âÇÑ´Ù. 
-	¿©·¯ °³ÀÇ ¹®¼­°¡ ½×ÀÎ´Ù¸é Queue ÀÚ·á±¸Á¶¿¡ ½×¿©¼­ FIFO - First In First Out - ¿¡ µû¶ó ÀÎ¼â°¡ µÇ°Ô µÈ´Ù. ÇÏÁö¸¸ »ó±ÙÀÌ´Â »õ·Î¿î ÇÁ¸°ÅÍ±â ³»ºÎ ¼ÒÇÁÆ®¿þ¾î¸¦ °³¹ßÇÏ¿´´Âµ¥, 
-	ÀÌ ÇÁ¸°ÅÍ±â´Â ´ÙÀ½°ú °°Àº Á¶°Ç¿¡ µû¶ó ÀÎ¼â¸¦ ÇÏ°Ô µÈ´Ù.
-
-	ÇöÀç QueueÀÇ °¡Àå ¾Õ¿¡ ÀÖ´Â ¹®¼­ÀÇ ¡®Áß¿äµµ¡¯¸¦ È®ÀÎÇÑ´Ù.
-	³ª¸ÓÁö ¹®¼­µé Áß ÇöÀç ¹®¼­º¸´Ù Áß¿äµµ°¡ ³ôÀº ¹®¼­°¡ ÇÏ³ª¶óµµ ÀÖ´Ù¸é, 
-	ÀÌ ¹®¼­¸¦ ÀÎ¼âÇÏÁö ¾Ê°í QueueÀÇ °¡Àå µÚ¿¡ Àç¹èÄ¡ ÇÑ´Ù. 
-	±×·¸Áö ¾Ê´Ù¸é ¹Ù·Î ÀÎ¼â¸¦ ÇÑ´Ù.
-	¿¹¸¦ µé¾î Queue¿¡ 4°³ÀÇ ¹®¼­(A B C D)°¡ ÀÖ°í, Áß¿äµµ°¡ 2 1 4 3 ¶ó¸é C¸¦ ÀÎ¼âÇÏ°í, ´ÙÀ½À¸·Î D¸¦ ÀÎ¼âÇÏ°í A, B¸¦ ÀÎ¼âÇÏ°Ô µÈ´Ù.
-
-	¿©·¯ºÐÀÌ ÇÒ ÀÏÀº, ÇöÀç Queue¿¡ ÀÖ´Â ¹®¼­ÀÇ ¼ö¿Í Áß¿äµµ°¡ ÁÖ¾îÁ³À» ¶§, ¾î¶² ÇÑ ¹®¼­°¡ ¸î ¹øÂ°·Î ÀÎ¼âµÇ´ÂÁö ¾Ë¾Æ³»´Â °ÍÀÌ´Ù. 
-	¿¹¸¦ µé¾î À§ÀÇ ¿¹¿¡¼­ C¹®¼­´Â 1¹øÂ°·Î, A¹®¼­´Â 3¹øÂ°·Î ÀÎ¼âµÇ°Ô µÈ´Ù.
-
-	ÀÔ·Â
-	Ã¹ ÁÙ¿¡ test caseÀÇ ¼ö°¡ ÁÖ¾îÁø´Ù. °¢ test case¿¡ ´ëÇØ¼­ ¹®¼­ÀÇ ¼ö N(100ÀÌÇÏ)¿Í ¸î ¹øÂ°·Î ÀÎ¼âµÇ¾ú´ÂÁö ±Ã±ÝÇÑ ¹®¼­°¡ ÇöÀç QueueÀÇ ¾î¶² À§Ä¡¿¡ ÀÖ´ÂÁö¸¦ ¾Ë·ÁÁÖ´Â M(0ÀÌ»ó N¹Ì¸¸)ÀÌ ÁÖ¾îÁø´Ù. 
-	´ÙÀ½ÁÙ¿¡ N°³ ¹®¼­ÀÇ Áß¿äµµ°¡ ÁÖ¾îÁö´Âµ¥, Áß¿äµµ´Â 1 ÀÌ»ó 9 ÀÌÇÏÀÌ´Ù. Áß¿äµµ°¡ °°Àº ¹®¼­°¡ ¿©·¯ °³ ÀÖÀ» ¼öµµ ÀÖ´Ù. À§ÀÇ ¿¹´Â N=4, M=0(A¹®¼­°¡ ±Ã±ÝÇÏ´Ù¸é), Áß¿äµµ´Â 2 1 4 3ÀÌ µÈ´Ù.
+	ë¬¸ì œ
+	ì—¬ëŸ¬ë¶„ë„ ì•Œë‹¤ì‹œí”¼ ì—¬ëŸ¬ë¶„ì˜ í”„ë¦°í„° ê¸°ê¸°ëŠ” ì—¬ëŸ¬ë¶„ì´ ì¸ì‡„í•˜ê³ ìž í•˜ëŠ” ë¬¸ì„œë¥¼ ì¸ì‡„ ëª…ë ¹ì„ ë°›ì€ â€˜ìˆœì„œëŒ€ë¡œâ€™, ì¦‰ ë¨¼ì € ìš”ì²­ëœ ê²ƒì„ ë¨¼ì € ì¸ì‡„í•œë‹¤. 
+	ì—¬ëŸ¬ ê°œì˜ ë¬¸ì„œê°€ ìŒ“ì¸ë‹¤ë©´ Queue ìžë£Œêµ¬ì¡°ì— ìŒ“ì—¬ì„œ FIFO - First In First Out - ì— ë”°ë¼ ì¸ì‡„ê°€ ë˜ê²Œ ëœë‹¤. í•˜ì§€ë§Œ ìƒê·¼ì´ëŠ” ìƒˆë¡œìš´ í”„ë¦°í„°ê¸° ë‚´ë¶€ ì†Œí”„íŠ¸ì›¨ì–´ë¥¼ ê°œë°œí•˜ì˜€ëŠ”ë°, 
+	ì´ í”„ë¦°í„°ê¸°ëŠ” ë‹¤ìŒê³¼ ê°™ì€ ì¡°ê±´ì— ë”°ë¼ ì¸ì‡„ë¥¼ í•˜ê²Œ ëœë‹¤.
+	í˜„ìž¬ Queueì˜ ê°€ìž¥ ì•žì— ìžˆëŠ” ë¬¸ì„œì˜ â€˜ì¤‘ìš”ë„â€™ë¥¼ í™•ì¸í•œë‹¤.
+	ë‚˜ë¨¸ì§€ ë¬¸ì„œë“¤ ì¤‘ í˜„ìž¬ ë¬¸ì„œë³´ë‹¤ ì¤‘ìš”ë„ê°€ ë†’ì€ ë¬¸ì„œê°€ í•˜ë‚˜ë¼ë„ ìžˆë‹¤ë©´, 
+	ì´ ë¬¸ì„œë¥¼ ì¸ì‡„í•˜ì§€ ì•Šê³  Queueì˜ ê°€ìž¥ ë’¤ì— ìž¬ë°°ì¹˜ í•œë‹¤. 
+	ê·¸ë ‡ì§€ ì•Šë‹¤ë©´ ë°”ë¡œ ì¸ì‡„ë¥¼ í•œë‹¤.
+	ì˜ˆë¥¼ ë“¤ì–´ Queueì— 4ê°œì˜ ë¬¸ì„œ(A B C D)ê°€ ìžˆê³ , ì¤‘ìš”ë„ê°€ 2 1 4 3 ë¼ë©´ Cë¥¼ ì¸ì‡„í•˜ê³ , ë‹¤ìŒìœ¼ë¡œ Dë¥¼ ì¸ì‡„í•˜ê³  A, Bë¥¼ ì¸ì‡„í•˜ê²Œ ëœë‹¤.
+	ì—¬ëŸ¬ë¶„ì´ í•  ì¼ì€, í˜„ìž¬ Queueì— ìžˆëŠ” ë¬¸ì„œì˜ ìˆ˜ì™€ ì¤‘ìš”ë„ê°€ ì£¼ì–´ì¡Œì„ ë•Œ, ì–´ë–¤ í•œ ë¬¸ì„œê°€ ëª‡ ë²ˆì§¸ë¡œ ì¸ì‡„ë˜ëŠ”ì§€ ì•Œì•„ë‚´ëŠ” ê²ƒì´ë‹¤. 
+	ì˜ˆë¥¼ ë“¤ì–´ ìœ„ì˜ ì˜ˆì—ì„œ Cë¬¸ì„œëŠ” 1ë²ˆì§¸ë¡œ, Aë¬¸ì„œëŠ” 3ë²ˆì§¸ë¡œ ì¸ì‡„ë˜ê²Œ ëœë‹¤.
+	ìž…ë ¥
+	ì²« ì¤„ì— test caseì˜ ìˆ˜ê°€ ì£¼ì–´ì§„ë‹¤. ê° test caseì— ëŒ€í•´ì„œ ë¬¸ì„œì˜ ìˆ˜ N(100ì´í•˜)ì™€ ëª‡ ë²ˆì§¸ë¡œ ì¸ì‡„ë˜ì—ˆëŠ”ì§€ ê¶ê¸ˆí•œ ë¬¸ì„œê°€ í˜„ìž¬ Queueì˜ ì–´ë–¤ ìœ„ì¹˜ì— ìžˆëŠ”ì§€ë¥¼ ì•Œë ¤ì£¼ëŠ” M(0ì´ìƒ Në¯¸ë§Œ)ì´ ì£¼ì–´ì§„ë‹¤. 
+	ë‹¤ìŒì¤„ì— Nê°œ ë¬¸ì„œì˜ ì¤‘ìš”ë„ê°€ ì£¼ì–´ì§€ëŠ”ë°, ì¤‘ìš”ë„ëŠ” 1 ì´ìƒ 9 ì´í•˜ì´ë‹¤. ì¤‘ìš”ë„ê°€ ê°™ì€ ë¬¸ì„œê°€ ì—¬ëŸ¬ ê°œ ìžˆì„ ìˆ˜ë„ ìžˆë‹¤. ìœ„ì˜ ì˜ˆëŠ” N=4, M=0(Aë¬¸ì„œê°€ ê¶ê¸ˆí•˜ë‹¤ë©´), ì¤‘ìš”ë„ëŠ” 2 1 4 3ì´ ëœë‹¤.
 	 
-	Ãâ·Â
-	°¢ test case¿¡ ´ëÇØ ¹®¼­°¡ ¸î ¹øÂ°·Î ÀÎ¼âµÇ´ÂÁö Ãâ·ÂÇÑ´Ù.	 
+	ì¶œë ¥
+	ê° test caseì— ëŒ€í•´ ë¬¸ì„œê°€ ëª‡ ë²ˆì§¸ë¡œ ì¸ì‡„ë˜ëŠ”ì§€ ì¶œë ¥í•œë‹¤.	 
 	 
-	¿¹Á¦ ÀÔ·Â 1 
+	ì˜ˆì œ ìž…ë ¥ 1 
 	3
 	1 0
 	5
@@ -45,17 +44,16 @@ public class PrinterQ1966 {
 	6 0
 	1 1 9 1 1 1
 	
-	¿¹Á¦ Ãâ·Â 1 
+	ì˜ˆì œ ì¶œë ¥ 1 
 	1
 	2
 	5		 
-
 	 * 
 	 */
 
-	static Queue<Character> queue1; //= new LinkedList<>();//Ã£°í½ÍÀº ¹øÁö¼ö ¸¦ #À¸·Î ¼±ÅÃÇØÁØ´Ù.
-	static Queue<Integer> queue2; //= new LinkedList<>();//Áß¿äµµ ³ÖÀ»°Í
-	static ArrayList<Integer> arr; //= new ArrayList<>();//Áß¿äµµ Á¤·ÄÇÏ°í½ÍÀ½
+	static Queue<Character> queue1; //= new LinkedList<>();//ì°¾ê³ ì‹¶ì€ ë²ˆì§€ìˆ˜ ë¥¼ #ìœ¼ë¡œ ì„ íƒí•´ì¤€ë‹¤.
+	static Queue<Integer> queue2; //= new LinkedList<>();//ì¤‘ìš”ë„ ë„£ì„ê²ƒ
+	static ArrayList<Integer> arr; //= new ArrayList<>();//ì¤‘ìš”ë„ ì •ë ¬í•˜ê³ ì‹¶ìŒ
 	public static void main(String[] args) throws Exception{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
@@ -86,7 +84,7 @@ public class PrinterQ1966 {
 				queue2.offer(Integer.parseInt(input[j]));
 				arr.add(Integer.parseInt(input[j]));
 			}
-			//**¿ì¼±¼øÀ§ Ã³¸®¸¦ ÇØ¾ßÇÑ´Ù!**
+			//**ìš°ì„ ìˆœìœ„ ì²˜ë¦¬ë¥¼ í•´ì•¼í•œë‹¤!**
 			Collections.sort(arr);
 			Collections.reverse(arr); 
 			
