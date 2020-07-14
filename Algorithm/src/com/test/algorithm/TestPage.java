@@ -1,12 +1,20 @@
 package com.test.algorithm;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class TestPage {
 	public static void main(String[] args) {
 		
 		
-		for (int i = 0; i < 100 ; i++) {
-			System.out.println(Math.random()*10);
-		}
+		
+		String a = "SLLLLSSLL";
+		
+		a.replace("LL", "X");
+		
+		System.out.println(a);
+		
+		
 		
 		
 		
