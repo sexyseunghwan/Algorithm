@@ -8,13 +8,15 @@ public class TestPage {
 		
 		
 		
-		String a = "SLLLLSSLL";
-		
-		a.replace("LL", "X");
-		
-		System.out.println(a);
+		String a = "adaabc";
+		String b = "aababbc";
 		
 		
+//		System.out.println(b.substring(1,a.length()));
+		
+		System.out.println(b.substring(0));
+		System.out.println(b.substring(0,6));
+		System.out.println(b.substring(1,7));
 		
 		
 		
