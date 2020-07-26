@@ -8,14 +8,15 @@ import java.util.StringTokenizer;
 
 public class TestPage {
 	public static void main(String[] args) throws Exception{
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
-		StringTokenizer stk = new StringTokenizer(br.readLine()," ");
-		System.out.println(stk.nextToken());
-		System.out.println(stk.nextToken());
+		double a = Math.pow(10,0.5);
+		System.out.println(a > 3);
 		
 		
 		
 	}
 
 }
+
+
+

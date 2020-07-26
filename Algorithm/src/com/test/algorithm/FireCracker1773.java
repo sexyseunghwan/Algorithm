@@ -67,9 +67,6 @@ public class FireCracker1773 {
 		
 		int[] bombTime = new int[endTime + 1];//폭죽이 터진시간들을 기록하기 위한 배열
 		
-		for(int i = 0; i < bombTime.length; i++) {
-			bombTime[i] = 0;//0이라는건 아직 폭죽이 터지지 않았다는 표시이다.
-		}
 		
 		for(int i = 0; i < cycle.length; i++) {
 			int num = cycle[i];
