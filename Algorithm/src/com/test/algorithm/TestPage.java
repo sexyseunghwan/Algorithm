@@ -8,10 +8,15 @@ import java.util.StringTokenizer;
 
 public class TestPage {
 	public static void main(String[] args) throws Exception{
+
+		String voca = "acd";
+		String[]  vacaArr = voca.split("");
+	
+		System.out.println(vacaArr[0]);
+		System.out.println(vacaArr[1]);
+		System.out.println(vacaArr[2]);
 		
-		double a = Math.pow(10,0.5);
-		System.out.println(a > 3);
-		
+
 		
 		
 	}
