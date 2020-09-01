@@ -49,6 +49,7 @@ public class GoodVoca3986 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		
+		
 		int cycle = Integer.parseInt(br.readLine());
 		int count = 0;
 		
