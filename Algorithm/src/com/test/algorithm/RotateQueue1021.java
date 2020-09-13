@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.StringTokenizer;
 
 public class RotateQueue1021 {
 /*
@@ -56,6 +57,64 @@ public class RotateQueue1021 {
 	 * */
 	public static void main(String[] args) throws Exception{
 		
+		m1();
+		//m2();
+		
+
+		
+		
+	}
+
+	private static void m2() throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		
+		String[] input = br.readLine().split(" ");
+		int total = Integer.parseInt(input[0]);//전체 숫자 개수
+		int pickCount = Integer.parseInt(input[1]);//몇개 찾을건지
+		
+		List<Integer> queue = new ArrayList<Integer>();
+		
+		for (int i = 1; i <= total; i++) {
+			queue.add(i);
+		}//일단 queue에 1 ~ 지정된 숫자 집어넣기 
+		
+		int answer = 0;//2,3번 연산 몇번 사용했는지 세줄것
+		
+		StringTokenizer stk = new StringTokenizer(br.readLine());
+		
+		for (int i = 0; i < pickCount; i++) {
+			
+			int num = Integer.parseInt(stk.nextToken());
+			int flag = 0;
+			
+			while(flag == 0) {
+				
+				if (num == queue.get(0)) {
+					//내가 찾던 숫자일 경우 -> 지워준다.
+					queue.remove(0);
+					flag = 1;
+				} else {
+					//내가 찾던 숫자가 아닐경우에
+					if (queue.indexOf(num) <= queue.size() / 2) {
+						//왼쪽 쉬프트
+						queue.add(queue.remove(0));
+						
+					} else {
+						//오른쪽 쉬프트
+						queue.add(0, queue.remove(queue.size()-1));
+					}
+					answer++;
+				}
+			}//while
+		}//for
+		
+		bw.write(answer + "");
+		bw.close();
+		
+	}
+
+	private static void m1() throws Exception{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		
@@ -108,7 +167,6 @@ public class RotateQueue1021 {
 		
 		bw.write(answerCount + "");
 		bw.close();
-		
 		
 	}
 		
