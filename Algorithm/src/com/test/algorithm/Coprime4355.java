@@ -54,7 +54,7 @@ public class Coprime4355 {
 	
 	public static void main(String[] args) throws Exception{
 		
-		//공통 : 1은 모든수와 서로소이다.
+		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		
