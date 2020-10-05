@@ -7,14 +7,12 @@ import java.io.OutputStreamWriter;
 
 public class TestPage {
 	public static void main(String[] args) throws Exception {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		//BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		//BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		
 		
-		int number = 1000000000;
 		
 		
-		System.out.println(number);
 		
 		
 	}
