@@ -9,69 +9,47 @@ public class TestPage {
 	
 	public static void main(String[] args) throws Exception {
 
+		//나중에 해보는걸로 하자 
+		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		
-		int cycle = Integer.parseInt(br.readLine());//몇번 싸이클 돌건지 정해준다.
 		
-		StringBuffer sb = new StringBuffer();//스트링버퍼
+		int cycle = Integer.parseInt(br.readLine());//몇번의 명령을 수행할건지 정해준다.
 		
-		int popIndex = 0;
-		int size = 0;
-		int index = 0;
+		int[] deck = new int[cycle];//덱 생성
+		int deckIndex = 0;//덱의 인덱스
+		int deckSize = 0;
+		int popFront = 0;
+		int popBack = 0;
 		
-		int[] queue = new int[cycle];
+		StringBuffer sb = new StringBuffer();//스트링버퍼 생성
 		
 		for (int i = 0; i < cycle; i++) {
 			
-			String[] input = br.readLine().split(" ");
+			String[] inputs = br.readLine().split(" ");
 			
-			String command = input[0];
+			String command = inputs[0];//명령어
 			
-			if (input.length == 2) {
-				//push 를 수행한다.
-				queue[index] = Integer.parseInt(input[1]);
-				index++;
-				size++;
+			if (inputs.length == 2) {
+				//push 명령어
+				int inputNum = Integer.parseInt(inputs[1]);
 				
-			} else {
-				//push 이외 모두를 뜻함.
-				if(command.equals("pop")) {
+				if (command.equals("push_front")) {
 					
-					if (size == 0) {
-						sb.append("-1\n");
-					} else {
-						sb.append(queue[popIndex] + "\n");
-						popIndex++;
-						size--;
-					}
-
-				} else if (command.equals("size")) {
 					
-					sb.append(size + "\n");
-					
-				} else if (command.equals("empty")) {
-					
-					if (size == 0) sb.append("1\n");
-					else sb.append("0\n");
-					
-				} else if (command.equals("front")) {
-					
-					if (size == 0) sb.append("-1\n");
-					else sb.append(queue[popIndex] + "\n");
 					
 				} else {
-					//back 인 경우
-					if (size == 0) sb.append("-1\n");
-					else sb.append(queue[index-1] + "\n");
+					
 				}
+				
+				
+			} else {
+				//push 를 제외한 모든 명령어
 			}
 			
+			
 		}//for
-		
-		bw.write(sb + "");
-		br.close();
-		bw.close();
 		
 		
 	}
