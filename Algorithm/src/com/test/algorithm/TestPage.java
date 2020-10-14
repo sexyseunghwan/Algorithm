@@ -1,55 +1,60 @@
 package com.test.algorithm;
 
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 public class TestPage {
 	
 	public static void main(String[] args) throws Exception {
 
-		//나중에 해보는걸로 하자 
-		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+			
+	
+		int cycle = Integer.parseInt(br.readLine());//반복할 횟수
 		
+		List<Integer> list = new ArrayList<Integer>();//동적 배열 생성
 		
-		int cycle = Integer.parseInt(br.readLine());//몇번의 명령을 수행할건지 정해준다.
-		
-		int[] deck = new int[cycle];//덱 생성
-		int deckIndex = 0;//덱의 인덱스
-		int deckSize = 0;
-		int popFront = 0;
-		int popBack = 0;
-		
-		StringBuffer sb = new StringBuffer();//스트링버퍼 생성
+		StringBuffer sb = new StringBuffer();
 		
 		for (int i = 0; i < cycle; i++) {
 			
-			String[] inputs = br.readLine().split(" ");
+			int input = Integer.parseInt(br.readLine());//숫자입력
 			
-			String command = inputs[0];//명령어
-			
-			if (inputs.length == 2) {
-				//push 명령어
-				int inputNum = Integer.parseInt(inputs[1]);
+			if (input == 0) {
+				//0을 입력한 경우
 				
-				if (command.equals("push_front")) {
+				if (list.size() == 0) {
+					//배열 내에 숫자가 더이상 없는경우
 					
-					
-					
+					sb.append(0 + "\n");
 				} else {
+					//배열 내에 숫자가 있는 경우
+					
+					int min = 2147483647;
+					
+					for (int j = 0; j < list.size(); j++) {
+						
+						int num = list.get(j);
+						
+						
+					}
+					
 					
 				}
 				
-				
 			} else {
-				//push 를 제외한 모든 명령어
+				//0이 아닌 그냥 숫자를 입력한 경우
+				
+				
 			}
 			
-			
-		}//for
+		}
 		
 		
 	}
