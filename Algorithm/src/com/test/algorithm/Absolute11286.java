@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Absolute11286 {
-	//역시나 시간초과에 걸리게 된다...허허허헣...
+	//역시나 시간초과에 걸리게 된다...허허허헣...자료구조에대해 공부를 해야한다.
 	public static void main(String[] args) throws Exception{
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -62,7 +62,7 @@ public class Absolute11286 {
 					
 					sb.append(list.get(minIndex) + "\n");
 					list.remove(minIndex);
-				
+					
 				}
 				
 			} else {//0이외숫자를 입력한 경우
