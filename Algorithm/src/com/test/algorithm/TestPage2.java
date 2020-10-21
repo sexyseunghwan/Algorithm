@@ -18,7 +18,7 @@ public class TestPage2 {
              }
          });
     	 
-    	 
+    	 //queue 의 성질을 파악해보자
     	 
     	
     	
