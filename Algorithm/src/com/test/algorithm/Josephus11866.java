@@ -35,12 +35,60 @@ public class Josephus11866 {
 	public static void main(String[] args) throws Exception {
 		
 		//m1();//첫번째 방법
-		m2();//두번쨰 방법
-
+		//m2();//두번쨰 방법
+		//m3();
 
 
 	}
 	
+	private static void m3() throws Exception {
+		// TODO Auto-generated method stub
+		
+	       BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	       BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+	        
+	       String[] input = br.readLine().split(" ");
+	        
+	        int n = Integer.parseInt(input[0]);
+	        int k = Integer.parseInt(input[1]);
+	        
+	        StringBuffer sb = new StringBuffer();//스트링 버퍼 생성
+	        
+	        int count = 0;//수 카운트
+	        int checked = 0;//확인할 숫자
+	        int index = 0;//배열 인덱스
+	        
+	        int[] room = new int[n];
+	        
+	        sb.append("<");
+	        
+	        while(checked != n) {
+	            
+	            if(room[index] == 0) {
+	                count++;
+	                
+	                if (count == k) {
+	                    if (checked == n-1) {
+	                        sb.append((index + 1) + "");
+	                    } else {
+	                        sb.append((index + 1) + ", ");
+	                    }
+	                    room[index] = 1;
+	                    checked++;
+	                    count = 0;
+	                }
+	            }
+	            index++;
+	            index %= n;
+	        }
+	        
+	        sb.append(">");
+	        
+	        bw.write(sb+"");
+	        bw.close();
+	        
+		}
+
 	private static void m2() throws Exception{
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
