@@ -1,28 +1,34 @@
 package com.test.algorithm;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
-import java.util.Comparator;
-import java.util.PriorityQueue;
-import java.util.Queue;
- 
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+
 public class TestPage2 {
  
     public static void main(String[] args) throws IOException {
  
       
-    	 Queue<Integer> pq = new PriorityQueue<>(new Comparator<Integer>() { 
-    		 @Override
-             public int compare(Integer o1, Integer o2) {
-                 if (Math.abs(o1) > Math.abs(o2) || (Math.abs(o1) == Math.abs(o2) && o1 > o2)) return 1;
-                 else return -1;
-             }
-         });
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		
+		int input = Integer.parseInt(br.readLine());
+		int answer = 0;
+		
+		while(input > 0) {
+			
+			if (input % 2 == 1) answer++;
+			
+			input /= 2;
+			
+		}
+		
+		
+		bw.write(answer + "");
+		br.close();
+		bw.close();
     	 
-    	 
-    	 //아니 이게 무슨 소리인지 모르겠지만.
-    	 
-
- 
     }
- 
 }
