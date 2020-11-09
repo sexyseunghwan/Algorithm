@@ -4,17 +4,22 @@ public class TreeTest {
 
 	public static void main(String[] args) {
 		
-		int[] a = new int[10];
+//		int[] a = new int[10];
+//		
+//		for (int i = 0; i < a.length; i++) {
+//			a[i] = i;
+//		}
+//		
+//		Tree t = new Tree();
+//		t.makeTree(a);
+//		System.out.println(t);
+//		t.searchBTree(t.root, 9);
 		
-		for (int i = 0; i < a.length; i++) {
-			a[i] = i;
-		}
+		StaticTest t1 = new StaticTest();
+		t1.applestore = 1;
+		System.out.println(t1.applestore);
 		
-		Tree t = new Tree();
-		t.makeTree(a);
-		System.out.println(t);
-		t.searchBTree(t.root, 9);
-		
+		//이게 상당히 static 은 안쓰는게 좋다고 알려져있음
 		
 	}
 }
@@ -29,8 +34,6 @@ class Node {
 	}
 	
 }
-
-
 
 class Tree {
 	
