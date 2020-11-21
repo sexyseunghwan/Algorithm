@@ -15,9 +15,9 @@ public class TreeTest {
 //		System.out.println(t);
 //		t.searchBTree(t.root, 9);
 		
-		StaticTest t1 = new StaticTest();
-		t1.applestore = 1;
-		System.out.println(t1.applestore);
+//		StaticTest t1 = new StaticTest();
+//		t1.applestore = 1;
+//		System.out.println(t1.applestore);
 		
 		//이게 상당히 static 은 안쓰는게 좋다고 알려져있음
 		
