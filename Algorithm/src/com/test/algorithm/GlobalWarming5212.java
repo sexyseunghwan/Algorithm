@@ -5,6 +5,7 @@ import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
+
 public class GlobalWarming5212 {
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -26,7 +27,7 @@ public class GlobalWarming5212 {
 				matrix[i][j] = ".";
 				answerMatrix[i][j] = ".";
 			}
-		}
+		}//for
 		
 		//행렬 입력 받기
 		for (int i = 1; i < row+1; i++) {
@@ -34,7 +35,7 @@ public class GlobalWarming5212 {
 			for (int j = 1; j < col+1; j++) {
 				matrix[i][j] = landSeas[j-1];
 			}
-		}
+		}//for
 		
 		
 		for (int i = 1; i < row + 1; i++) {
@@ -55,10 +56,17 @@ public class GlobalWarming5212 {
 					}
 				}
 			}
-		}
+		}//for
 		
-		int rstart,rlast,cstars,clast = 0;
+
 		
+		//여기서 이제 마지막 답을 도출하기 위해서 바다를 제거해준다.
+		int rstart = 1;
+		int rlast = 1;
+		int cstart = 1;
+		int clast = 1;
+		
+		//행에 관련된 연산
 		for (int i = 1; i < row + 1; i++) {
 			boolean flag = true;
 			for (int j = 1; j < col + 1; j++) {
@@ -68,43 +76,57 @@ public class GlobalWarming5212 {
 					break;
 				}
 			}
+			if (!flag)  break;
+		}
+		
+		for (int i = row; i >= 1; i--) {
+			boolean flag = true;
+			for (int j = 1; j < col + 1; j++) {
+				if (answerMatrix[i][j].equals("X")) {
+					flag = false;
+					rlast = i;
+					break;
+				}
+			}
 			if (!flag) break;
 		}
 		
+		//행에서는 문제가 발생되지 않음
 		
-		System.out.println();
-		for (int i = 0; i < row + 2; i++) {
-			for (int j = 0; j < col + 2; j++) {
-				System.out.print(answerMatrix[i][j]);
+		for (int i = 1; i < col + 1; i++) {
+			boolean flag = true;
+			for (int j = 1; j < row + 1; j++) {
+				if (answerMatrix[j][i].equals("X")) {
+					flag = false;
+					cstart = i;
+					break;
+				}
 			}
-			System.out.println();
+			if (!flag) break;
 		}
 		
+		for (int i = col; i >= 1; i--) {
+			boolean flag = true;
+			for (int j = 1; j < row + 1; j++) {
+				if (answerMatrix[j][i].equals("X")) {
+					flag = false;
+					clast = i;
+					break;
+				}
+			}
+			if (!flag) break;
+		}
 		
-
-		
-		
-//		for (int i = 0; i < row; i++) {
-//			String[] cordinates = br.readLine().split("");
-//			
-//			for (int j = 0; j < col; j++) {
-//				matrix[i][j] = cordinates[j];
-//			}
-//		}
-		
-		
-		
-		
-//		for (int i = 0; i < row; i++) {
-//			for (int j = 0; j < col; j++) {
-//				System.out.print(matrix[i][j]);
-//			}
-//			System.out.println();
-//		}
-		
-		
-		
-		
+	
+		for (int i = rstart; i <= rlast; i++) {
+			for (int j = cstart; j <= clast; j++) {
+				//System.out.print(answerMatrix[i][j]);
+				bw.write(answerMatrix[i][j] + "");
+			}
+			bw.write("\n");
+		}
+		br.close();
+		bw.close();
 		
 		
 		
