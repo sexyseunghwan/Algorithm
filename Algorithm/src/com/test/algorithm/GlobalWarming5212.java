@@ -7,19 +7,21 @@ import java.io.OutputStreamWriter;
 
 
 public class GlobalWarming5212 {
+	
+	static String[][] answerMatrix;
+
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		
 		String[] inputs = br.readLine().split(" ");
 		
-		
 		int row = Integer.parseInt(inputs[0]);//행
 		int col = Integer.parseInt(inputs[1]);//열
 		
 		//행렬을 만들어야 한다? -> 가장자리 행렬을 하나씩 추가해준다.
 		String[][] matrix = new String[row+2][col+2];
-		String[][] answerMatrix = new String[row+2][col+2];
+		answerMatrix = new String[row+2][col+2];
 		
 		//행렬에 바다표시 육지표시 표시를 해주기 -> 가장자리 표시를 위해서 행렬 하나씩 늘려준다.
 		for (int i = 0; i < row + 2; i++) {
@@ -57,78 +59,73 @@ public class GlobalWarming5212 {
 				}
 			}
 		}//for
-		
-
-		
+		 
 		//여기서 이제 마지막 답을 도출하기 위해서 바다를 제거해준다.
-		int rstart = 1;
-		int rlast = 1;
-		int cstart = 1;
-		int clast = 1;
-		
-		//행에 관련된 연산
-		for (int i = 1; i < row + 1; i++) {
-			boolean flag = true;
-			for (int j = 1; j < col + 1; j++) {
-				if (answerMatrix[i][j].equals("X")) {
-					flag = false;
-					rstart = i;
-					break;
-				}
-			}
-			if (!flag)  break;
-		}
-		
-		for (int i = row; i >= 1; i--) {
-			boolean flag = true;
-			for (int j = 1; j < col + 1; j++) {
-				if (answerMatrix[i][j].equals("X")) {
-					flag = false;
-					rlast = i;
-					break;
-				}
-			}
-			if (!flag) break;
-		}
-		
-		//행에서는 문제가 발생되지 않음
-		
-		for (int i = 1; i < col + 1; i++) {
-			boolean flag = true;
-			for (int j = 1; j < row + 1; j++) {
-				if (answerMatrix[j][i].equals("X")) {
-					flag = false;
-					cstart = i;
-					break;
-				}
-			}
-			if (!flag) break;
-		}
-		
-		for (int i = col; i >= 1; i--) {
-			boolean flag = true;
-			for (int j = 1; j < row + 1; j++) {
-				if (answerMatrix[j][i].equals("X")) {
-					flag = false;
-					clast = i;
-					break;
-				}
-			}
-			if (!flag) break;
-		}
-		
-	
+		int rstart = answerCheckAsc(row,col,1);
+		int rlast = answerCheckDesc(row,col,1);
+		int cstart = answerCheckAsc(col,row,0);
+		int clast = answerCheckDesc(col,row,0);
+
+		//답 도출하는 곳.
 		for (int i = rstart; i <= rlast; i++) {
 			for (int j = cstart; j <= clast; j++) {
-				//System.out.print(answerMatrix[i][j]);
 				bw.write(answerMatrix[i][j] + "");
 			}
 			bw.write("\n");
 		}
 		br.close();
 		bw.close();
+	}
+	
+	static int answerCheckAsc(int index1,int index2, int select) {
 		
+		int answerIndex = 0;
 		
+		for (int i = 1; i < index1 + 1; i++) {
+			boolean flag = true;
+			for (int j = 1; j < index2 + 1; j++) {
+				if (select == 1) {
+					if (answerMatrix[i][j].equals("X")) {
+						flag = false;
+						answerIndex = i;
+						break;
+					}
+				} else {
+					if (answerMatrix[j][i].equals("X")) {
+						flag = false;
+						answerIndex = i;
+						break;
+					}
+				}
+			}
+			if (!flag)  break;
+		}
+		return answerIndex;
+	}
+	
+	static int answerCheckDesc(int index1,int index2, int select) {
+		int answerIndex = 0;
 		
+		for (int i = index1; i >= 1; i--) {
+			boolean flag = true;
+			for (int j = 1; j < index2 + 1; j++) {
+				if (select == 1) {
+					if (answerMatrix[i][j].equals("X")) {
+						flag = false;
+						answerIndex = i;
+						break;
+					}
+				} else {
+					if (answerMatrix[j][i].equals("X")) {
+						flag = false;
+						answerIndex = i;
+						break;
+					}
+				}
+				
+			}
+			if (!flag) break;
+		}
+		return answerIndex;
 	}
 }
