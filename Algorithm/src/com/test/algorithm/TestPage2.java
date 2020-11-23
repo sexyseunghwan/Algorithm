@@ -51,6 +51,7 @@ public class TestPage2 {
 		int endRow = 0;
 		int startColumn = 0;
 		int endColumn = 0;
+		
 		for(int i=0; i<r+2; i++) {
 			for(int j=0; j<c+2; j++) {
 				if(b[i][j] == 'X' && startRow == 0) startRow = i;

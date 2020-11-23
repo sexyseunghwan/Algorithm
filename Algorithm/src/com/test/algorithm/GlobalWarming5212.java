@@ -35,6 +35,7 @@
  
 */
 package com.test.algorithm;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
@@ -44,7 +45,8 @@ import java.io.OutputStreamWriter;
 public class GlobalWarming5212 {
 	
 	static String[][] answerMatrix;
-
+	static String[][] matrix;
+	
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
@@ -55,7 +57,7 @@ public class GlobalWarming5212 {
 		int col = Integer.parseInt(inputs[1]);//열
 		
 		//행렬을 만들어야 한다? -> 가장자리 행렬을 하나씩 추가해준다.
-		String[][] matrix = new String[row+2][col+2];
+		matrix = new String[row+2][col+2];
 		answerMatrix = new String[row+2][col+2];
 		
 		//행렬에 바다표시 육지표시 표시를 해주기 -> 가장자리 표시를 위해서 행렬 하나씩 늘려준다.
@@ -108,8 +110,10 @@ public class GlobalWarming5212 {
 			}
 			bw.write("\n");
 		}
+
 		br.close();
 		bw.close();
+		
 	}
 	
 	static int answerCheckAsc(int index1,int index2, int select) {
@@ -162,5 +166,19 @@ public class GlobalWarming5212 {
 			if (!flag) break;
 		}
 		return answerIndex;
+	}
+	
+	static void dfs(int x, int y) {
+		if (matrix[x][y].equals(".")) return;
+		
+		int cnt = 0;
+	
+		if (matrix[x-1][y].equals(".")) cnt++;
+		if (matrix[x][y-1].equals(".")) cnt++;
+		if (matrix[x+1][y].equals(".")) cnt++;
+		if (matrix[x][y+1].equals(".")) cnt++;
+		
+		if (cnt >= 3) {answerMatrix[x][y] = ".";}
+		else {answerMatrix[x][y] = "X";}
 	}
 }
