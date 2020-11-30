@@ -59,7 +59,7 @@ public class MaxOfIsland {
    }//max 끝나는 문장.
    
    	//깊이 우선 탐색
-    int dfs(int[][] grid,int i,int j,int area) {//왜 계속 area가 커지는거지?..아 재귀를 이해하고싶다 너무너무
+    int dfs(int[][] grid,int i,int j,int area) {
       
         //dfs를 빠져나가기 위한 문장
       if(i<0 || i>=m || j<0 ||j>=n|| grid[i][j] == 0) { return area;}//여기서 하나하나씩 필터링 해주는 구조라고 생각하면 된다.
