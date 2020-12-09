@@ -13,6 +13,47 @@ public class TestPage {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		
+		//여기서 연습을 해보자
+		String[] inputs = br.readLine().split(" ");
+		
+		int r = Integer.parseInt(inputs[0]);
+		int c = Integer.parseInt(inputs[1]);
+		
+		String[][] matrix = new String[r+2][c+2];
+		
+		
+		
+		
+		
+		
+		
+		/*
+	
+	
+	# # . .
+	. # # .
+	# . . .
+	
+	# . . .
+	. # # .
+	# # . .
+	
+	XXXXXX
+	X...XX
+	.....X
+	X.X.XX
+	XXXXXX
+	
+	재귀 함수를 써야 될거같은 느낌이 확 드는데 아닌가뵹/ㅁ
+	
+	
+	XXXXXX
+	XXXXXX
+	XXXXXX
+	XXXXXX
+	XXXXXX
+	
+		 * */
 		
 		
 		/*
