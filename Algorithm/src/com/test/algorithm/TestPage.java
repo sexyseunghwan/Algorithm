@@ -5,21 +5,60 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.Arrays;
 
 
 public class TestPage {
 	
+	
+	static int test(int params) {
+		
+		params++;
+		
+		return params; 
+	}
+	
 	public static void main(String[] args) throws Exception {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+//		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+//		
+//		
+//		System.out.println(test(3));
+//		
+//		
+//		//여기서 연습을 해보자
+//		String[] inputs = br.readLine().split(" ");
+//		
+//		int r = Integer.parseInt(inputs[0]);
+//		int c = Integer.parseInt(inputs[1]);
+//		
+//		String[][] matrix = new String[r+2][c+2];
 		
-		//여기서 연습을 해보자
-		String[] inputs = br.readLine().split(" ");
 		
-		int r = Integer.parseInt(inputs[0]);
-		int c = Integer.parseInt(inputs[1]);
+		//String a = "apple";
+		//System.out.println(a.substring(1,2));
 		
-		String[][] matrix = new String[r+2][c+2];
+		
+		String[] array = new String[4];
+		array[0] = "a";
+		array[1] = "z";
+		array[2] = "c";
+		array[3] = "b";
+		
+		for (int i = 0; i < 4; i++) {
+			System.out.println(array[i]);
+		}
+		
+		
+		System.out.println("=============");
+		Arrays.sort(array);
+		
+		//System.out.println(array.toString());
+		for (int i = 0; i < 4; i++) {
+			System.out.println(array[i]);
+		}
+		
+		
 		
 		
 		
@@ -57,13 +96,54 @@ public class TestPage {
 		
 		
 		/*
+		  
+		  1 1 0 1 1
+          0 1 1 0 0
+          0 0 0 0 0
+          1 1 0 1 1
+          1 0 1 1 1
+          1 0 1 1 1
+          
+          area = 1
+          
+		  * 1 0 1 1
+          0 1 1 0 0
+          0 0 0 0 0
+          1 1 0 1 1
+          1 0 1 1 1
+          1 0 1 1 1
+          
+          area = 2
+          
+          * * 0 1 1
+          0 1 1 0 0
+          0 0 0 0 0
+          1 1 0 1 1
+          1 0 1 1 1
+          1 0 1 1 1
+          
+          area = 4
+          
+          * * 0 1 1
+          0 * * 0 0
+          0 0 0 0 0
+          1 1 0 1 1
+          1 0 1 1 1
+          1 0 1 1 1
+          
+          this is dfs ;;;이야 쩐다 진짜 미치겠다 ㅋㅋㅋ 미쳤다 진짜 ㅋㅋㅋ 어찌 이런생각을 할수가 있을까 ㅋㅋㅋ 미치겠다.
+          
+          <- , -> , up , down
+		  
+		 	
+		  
 		 	............
 		 	............
 		 	...XXX.XXX..
 			.XXX........
 			............
-		 
-		 
+		    
+		    
 		 	............
 			............
 			...XX...X...
