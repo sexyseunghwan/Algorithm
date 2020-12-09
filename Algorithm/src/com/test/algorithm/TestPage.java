@@ -5,6 +5,7 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.Arrays;
 
 
 public class TestPage {
@@ -18,20 +19,46 @@ public class TestPage {
 	}
 	
 	public static void main(String[] args) throws Exception {
-		//BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		//BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+//		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+//		
+//		
+//		System.out.println(test(3));
+//		
+//		
+//		//여기서 연습을 해보자
+//		String[] inputs = br.readLine().split(" ");
+//		
+//		int r = Integer.parseInt(inputs[0]);
+//		int c = Integer.parseInt(inputs[1]);
+//		
+//		String[][] matrix = new String[r+2][c+2];
 		
 		
-		System.out.println(test(3));
+		//String a = "apple";
+		//System.out.println(a.substring(1,2));
 		
 		
-		//여기서 연습을 해보자
-		String[] inputs = br.readLine().split(" ");
+		String[] array = new String[4];
+		array[0] = "a";
+		array[1] = "z";
+		array[2] = "c";
+		array[3] = "b";
 		
-		int r = Integer.parseInt(inputs[0]);
-		int c = Integer.parseInt(inputs[1]);
+		for (int i = 0; i < 4; i++) {
+			System.out.println(array[i]);
+		}
 		
-		String[][] matrix = new String[r+2][c+2];
+		
+		System.out.println("=============");
+		Arrays.sort(array);
+		
+		//System.out.println(array.toString());
+		for (int i = 0; i < 4; i++) {
+			System.out.println(array[i]);
+		}
+		
+		
 		
 		
 		
