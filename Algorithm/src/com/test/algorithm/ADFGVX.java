@@ -9,6 +9,29 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ADFGVX {
+	
+	static void arrPrint(String[][] arr) {
+		
+		int rows = arr.length;
+		int col = arr[0].length;
+		
+		
+		for (int i = 0; i < rows; i++) {
+			for (int j = 0; j < col; j++) {
+				System.out.print(arr[i][j] + " ");
+			}
+			System.out.println();
+		}
+		
+	}
+	
+	static void arrPrint(List<String> arr) {
+		
+		System.out.println(arr);
+		
+	}
+	
+	
 	public static void main(String[] args) throws Exception{
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -34,17 +57,12 @@ public class ADFGVX {
 			}
 		}
 		
-		for (int i = 0; i < 7; i++) {
-			for (int j = 0; j < 7; j++) {
-				System.out.print(initialMatrix[i][j] + " ");
-			}
-			System.out.println();
-		}
-		
+		arrPrint(initialMatrix);//암호판 확인 완료
+
 		
 		//System.out.println(innerContents.length);//확인용
-		String input = br.readLine();//input
-		List<String> result = new ArrayList<String>();
+		String input = br.readLine();//input -> 암호화 시킬값
+		List<String> result = new ArrayList<String>();// 1차 암호화된 값을 담을 그릇
 		
 		
 		//암호변환작업 1 -> encoding
@@ -61,23 +79,34 @@ public class ADFGVX {
 					}
 				}
 			}//for
-		}//for
+		}//for -> 1차 암호화 완료
 		
-		//일단 후처리는 뒤에 맡겨두고 ㅇㅇ -> 제 2 암호화를 준비한다.
-		String inputKey = br.readLine();
-		int keyRow = (int)Math.ceil(result.size() / inputKey.length());//다운캐스팅 까지 완료
-		int keyCol = inputKey.length();
+		System.out.println("=========");
+		arrPrint(result);//1 차 암호화 확인 완료
+		System.out.println("=========");
 		
-		String[][] keyMatrix = new String[keyRow+1][keyCol]; 
+		
+		//일단 후처리는 뒤에 맡겨두고  --> 제 2 암호화를 준비한다.
+		String inputKey = br.readLine();//key 값 입력(**)
+		int keyRow = (int)Math.ceil((double)result.size() / inputKey.length());//다운캐스팅 까지 완료 -> 올림을 통하여 행을 하나 늘려주는 역할을 수행한다.
+		int keyCol = inputKey.length();//key의 길이
+		
+		System.out.println("****");
+		System.out.println(keyRow);
+		System.out.println(keyCol);
+		System.out.println("****");
+		
+		String[][] keyMatrix = new String[keyRow+1][keyCol]; //2차 암호화된 결과를 담을 그릇 왜 플러스1을 해주는거지? -> key를 타이틀로 주기 위해서
+		
 		
 		int keyIndex = 0;
 		
-		for (int i = 0; i <= keyRow; i++) {
+		for (int i = 0; i < keyRow + 1; i++) {
 			for (int j = 0; j < keyCol; j++) {
 				
-				if (i == 0) { // 첫번째 줄일경우
+				if (i == 0) { //첫번째 줄일경우
 					
-					keyMatrix[i][j] = inputKey.substring(j,j+1);//위의 문자 키워드를 집어넣을 것이다.
+					keyMatrix[i][j] = inputKey.substring(j,j+1);//위의 문자 키워드를 집어넣을 것이다. -> key 값을 적겠다는 의미가 된다.
 					
 				} else { // 두번째 줄 이상일 경우
 					
@@ -90,18 +119,30 @@ public class ADFGVX {
 			}
 		}//for
 		
+		arrPrint(keyMatrix);
+		//여기까지 문제없음...
 		
-		String[] finalArr = new String[keyRow*keyCol];
-		String[] keySort = inputKey.split("");
-		Arrays.sort(keySort);//키 정렬 
+		//String[] finalArr = new String[keyRow*keyCol];//최종 암호화된 문자열을 집어넣을 곳이 된다.
+		//List<String> finalArr = new ArrayList<String>();
+		//String[] keySort = inputKey.split("");//입력key를 부분부분 쪼갠다.
+		//Arrays.sort(keySort);//키 정렬 
 		
 		
-		for (int i = 0; i < keySort.length; i++) {
-			
-			for (int j = 0; j < ; j++) {
-				
-			}
-		}
+//		for (int i = 0; i < keySort.length; i++) {
+//			
+//			//int kIndex = 0;
+//			
+//			for (int j = 0; j < keyCol; j++) {
+//				
+//				if (keyMatrix[0][j].equals(keySort[i])) {
+//					
+//					//for (int k = 0; k < )
+//					
+//					
+//					break;
+//				}
+//			}
+//		}
 		
 		
 		//잘 들어가지는걸 확인했다.
