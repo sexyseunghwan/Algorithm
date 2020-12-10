@@ -31,6 +31,13 @@ public class ADFGVX {
 		
 	}
 	
+	static void naturalPrint(List<String> arr) {
+		
+		for (int i = 0; i < arr.size(); i++) {
+			System.out.print(arr.get(i));
+		}
+		
+	}
 	
 	public static void main(String[] args) throws Exception{
 		
@@ -122,38 +129,37 @@ public class ADFGVX {
 		arrPrint(keyMatrix);
 		//여기까지 문제없음...
 		
-		//String[] finalArr = new String[keyRow*keyCol];//최종 암호화된 문자열을 집어넣을 곳이 된다.
-		//List<String> finalArr = new ArrayList<String>();
-		//String[] keySort = inputKey.split("");//입력key를 부분부분 쪼갠다.
-		//Arrays.sort(keySort);//키 정렬 
-		
-		
-//		for (int i = 0; i < keySort.length; i++) {
-//			
-//			//int kIndex = 0;
-//			
-//			for (int j = 0; j < keyCol; j++) {
-//				
-//				if (keyMatrix[0][j].equals(keySort[i])) {
-//					
-//					//for (int k = 0; k < )
-//					
-//					
-//					break;
-//				}
-//			}
-//		}
-		
-		
-		//잘 들어가지는걸 확인했다.
-//		for (int i = 0; i < result.size(); i++) {
-//			System.out.println(result.get(i));
-//		}
+		//String[] finalArr = new String[keyRow*keyCol];//가변배열을 쓰는게 더 나음
+		List<String> finalArr = new ArrayList<String>();//최종 암호화된 문자열을 집어넣을 곳이 된다.
+		String[] keySort = inputKey.split("");//입력key를 부분부분 쪼갠다.
+		Arrays.sort(keySort);//키 정렬 -> 우선순위를 배정하기 위함이다.
 		
 		
 		
+		for (int i = 0; i < keySort.length; i++) {
+			
+			String selectNum = keySort[i];//key 문자열 하나.
+			
+			for (int j = 0; j < keyCol; j++) {
+				
+				if (selectNum.equals(keyMatrix[0][j])) {
+					
+					
+					for (int k = 1; k <= keyRow; k++) {
+						
+						finalArr.add(keyMatrix[k][j]);
+						
+					}
+					
+					break;
+				}
+			}	
+		}//for
 		
 		
+		arrPrint(finalArr);//암호화 완료.
+		naturalPrint(finalArr);//
+				
 	}
 
 }
