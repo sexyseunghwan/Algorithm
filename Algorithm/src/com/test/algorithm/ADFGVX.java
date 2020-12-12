@@ -22,7 +22,6 @@ public class ADFGVX {
 			}
 			System.out.println();
 		}
-		
 	}
 	
 	static void arrPrint(List<String> arr) {
@@ -45,21 +44,34 @@ public class ADFGVX {
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		
 		
-		String[][] initialMatrix = new String[7][7];//여기에 암호들이 들어있음.
-		String[] standard = {"A","D","F","G","V","X"};
-		String[] innerContents = {"K","Z","W","R","1","F","9","B","6","C","L","5",
-									"Q","7","J","P","G","X","E","V","Y","3","A","N",
-									"8","O","D","H","0","2","U","4","I","S","T","M"};
+		String[][] initialMatrix = new String[11][11];//여기에 암호들이 들어있음.
+		String[] standard = {"A","D","F","G","V","X","S","B","M","G"};
+//		String[] innerContents = {"K","Z","W","R","1","F","9","B","6","C","L","5",
+//									"Q","7","J","P","G","X","E","V","Y","3","A","N",
+//									"8","O","D","H","0","2","U","4","I","S","T","M"};
+		
+		String[] innerContents = {"K","Z","W","R","1","F","<","l","c","**",
+								  "9","B","6","C","L","5",".","x","&","**",
+								  "Q","7","J","P","G","X",">","m","*","**",
+								  "E","V","Y","3","A","N","/","v","z","**",
+								  "8","O","D","H","0","2","?","'","(","**",
+								  "U","4","I","S","T","M","^","n","_","**",
+								  "~","`","!","@","#","$","%","b","k","**",
+								  "q","i","t","d",":","=","\"","j","h","**",
+								  "f",")",";","p","g","s",",","a","o","**",
+								  "u","+","y","r","e","w","-","\\","|"," "};
+		
+		//System.out.println(innerContents.length);//왜 90개가 된거야
 		
 		for (int i = 1; i <= standard.length; i++) {
 			initialMatrix[0][i] = standard[i-1]; 
-			initialMatrix[i][0] = standard[i-1]; 
+			initialMatrix[i][0] = standard[i-1];
 		}
 		
 		int shift = 0;
 		
-		for (int i = 1; i < 7; i++) {
-			for (int j = 1; j < 7; j++) {
+		for (int i = 1; i < 11; i++) {
+			for (int j = 1; j < 11; j++) {
 				initialMatrix[i][j] = innerContents[shift++];
 			}
 		}
