@@ -95,7 +95,7 @@ public class ADFGVXDECODE {
 		
 		// ============ 암호판 ============
 		String[][] initialMatrix = new String[11][11];//여기에 암호들이 들어있음.
-		String[] standard = {"A","D","F","G","V","X","S","B","M","G"};
+		String[] standard = {"A","D","F","G","V","X","S","B","M","Z"};
 //		String[] innerContents = {"K","Z","W","R","1","F","9","B","6","C","L","5",
 //									"Q","7","J","P","G","X","E","V","Y","3","A","N",
 //									"8","O","D","H","0","2","U","4","I","S","T","M"};

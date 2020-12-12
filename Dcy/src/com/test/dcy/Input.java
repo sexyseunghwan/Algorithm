@@ -43,7 +43,7 @@ public class Input {
 					//예외처리 구문
 					try {
 						
-						String decodeVoca = dcystart.returnDcyCode(dcyMatrix.initialMatrix(), inputPw, inputKey);
+						String decodeVoca = dcystart.returnDcyCode(dcyMatrix.initialMatrix(), inputPw, inputKey);//오류발생
 						
 						System.out.printf("복호화된 문자열 : %s",decodeVoca);
 						System.out.println();

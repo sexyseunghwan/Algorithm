@@ -17,13 +17,13 @@ public class Dcy {
 				}
 			}
 			
-			public String[] zeroRowPw = {"A","D","F","G","V","X","S","B","M","G"};
+			public String[] zeroRowPw = {"A","D","F","G","V","X","S","B","M","Z"};
 			
 			//암호화키판 리턴시켜준다.
 			public String[][] initialMatrix() {
 				
 				String[][] initialMatrix = new String[11][11];//여기에 암호들이 들어있음.
-				String[] standard = {"A","D","F","G","V","X","S","B","M","G"};
+				String[] standard = {"A","D","F","G","V","X","S","B","M","Z"};
 				
 				String[] innerContents = {"K","Z","W","R","1","F","<","l","c","**",
 										  "9","B","6","C","L","5",".","x","&","**",
