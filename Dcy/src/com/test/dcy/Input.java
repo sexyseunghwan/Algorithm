@@ -15,7 +15,6 @@ public class Input {
 		while(inputFirstFlag) {
 			
 			System.out.print("복호화할 비밀번호를 적어주세요 : ");
-			
 			String inputPw = scan.nextLine();//오류처리는 일단 제외해보자.
 			inputFirstFlag = false;//여기서는 일단 오류처리 제외할것이다.
 			

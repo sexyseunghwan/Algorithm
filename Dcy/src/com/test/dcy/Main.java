@@ -8,14 +8,14 @@ public class Main {
 		Input input = new Input();
 		input.input();//처음 입력받는곳.
 		
+		
 	}
 }
 
 
 
 
-/*
- 
+/* 	
       A D F G V X S B M Z 
 	A K Z W R 1 F < l c ** 
 	D 9 B 6 C L 5 . x & ** 
@@ -27,7 +27,9 @@ public class Main {
 	B q i t d : = " j h ** 
 	M f ) ; p g s , a o ** 
 	Z u + y r e w - \ |   
-  
-  	
- 
+	
+	
+	
  * */
+
+

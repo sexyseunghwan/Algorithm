@@ -12,6 +12,8 @@ public class Main {
 
 /*
 
+
+
 B D F B M 
 G M M Z G 
 B F M B X 

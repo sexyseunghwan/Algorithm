@@ -27,7 +27,6 @@ public class SecureKeyCheck {
 		//String a = "apple";
 		//SecureKeyCheck sc = new SecureKeyCheck();
 		//sc.keyCheck("apple")
-		
 		//System.out.println(sc.keyCheck("aAe"));
 		
 	}
