@@ -1,12 +1,12 @@
-package com.test.enc;
+package com.test.dcy;
 
 public class InputErrorCheck {
 	
 	//들어오는 문자열 체크해준다.
 	public int errorcheck(String input) {
 		
-		Enc enc = new Enc();
-		String[] innerContents =  enc.innerContents;//암호화판 가져온다.
+		Dcy dcy = new Dcy();
+		String[] innerContents = dcy.innerContents;//암호화판 가져온다.
 		
 		int result = 0;
 		
@@ -29,8 +29,8 @@ public class InputErrorCheck {
 				break;
 			}	
 		}//for
-
+		
 		return result;
 	}
-	
 }
+

@@ -6,12 +6,21 @@ public class Main {
 	public static void main(String[] args) {
 		
 		Input input = new Input();
-		input.input();//처음 입력받는곳.
+		Exit exit = new Exit();
+		boolean loop = true;
 		
-		
+		while(loop) {
+			input.input();//처음 입력 받는곳
+			
+			int select = exit.selectExit();
+			//종료하는 경우
+			if (select == 1) loop = false;
+			
+		}//while
 	}
 }
 
+//복호화값이 null이 하나라도 나오는경우에는 아무런 문자를 넣어주는걸로 하자
 
 
 

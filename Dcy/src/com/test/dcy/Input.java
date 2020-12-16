@@ -11,12 +11,21 @@ public class Input {
 		boolean inputFirstFlag = true;
 		boolean inputSecondFlag = true;
 		
+		InputErrorCheck iec = new InputErrorCheck();
 		
 		while(inputFirstFlag) {
 			
 			System.out.print("복호화할 비밀번호를 적어주세요 : ");
-			String inputPw = scan.nextLine();//오류처리는 일단 제외해보자.
-			inputFirstFlag = false;//여기서는 일단 오류처리 제외할것이다.
+			String inputPw = scan.nextLine();
+			int errInt = iec.errorcheck(inputPw);
+			
+			if (errInt == 0) {
+				inputFirstFlag = false;
+			} else {
+				System.out.println("** 문자는 영어소문자/대문자 특수문자만 입력 가능합니다. **");
+				continue;
+			}
+			
 			
 			while(inputSecondFlag) {
 				
@@ -43,6 +52,10 @@ public class Input {
 					try {
 						
 						String decodeVoca = dcystart.returnDcyCode(dcyMatrix.initialMatrix(), inputPw, inputKey);//오류발생
+						
+						//복호화값에 null 이 존재하면 랜덤문자열로 돌려줄것이다.
+						RandomDcy rd = new RandomDcy();
+						
 						
 						System.out.printf("복호화된 문자열 : %s",decodeVoca);
 						System.out.println();
