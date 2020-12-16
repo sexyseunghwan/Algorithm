@@ -6,17 +6,24 @@ public class SecureKeyCheck {
 	public int keyCheck(String input) { 
 		int result = 0;
 		
-		for (int i = 0; i < input.length(); i++) {
+		if (input.length() == 0) {
+			//아무것도 입력 안하는 경우
+			result = 2;
 			
-			String voca = input.substring(i,i+1);
+		} else {
 			
-			for (int j = i+1; j < input.length(); j++) {
-				if(input.substring(j,j+1).equals(voca)) {
-					result = 1;
-					break;
-				}
+			for (int i = 0; i < input.length(); i++) {
+				
+				String voca = input.substring(i,i+1);
+				
+				for (int j = i+1; j < input.length(); j++) {
+					if(input.substring(j,j+1).equals(voca)) {
+						result = 1;
+						break;
+					}
+				}//for
 			}//for
-		}//for
+		}
 		
 		return result;
 	}

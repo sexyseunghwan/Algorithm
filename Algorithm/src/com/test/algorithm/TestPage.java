@@ -19,9 +19,15 @@ public class TestPage {
 	}
 	
 	public static void main(String[] args) throws Exception {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-//		
+		
+		//복호화하는거란 말이지?
+		
+		String a = 
+		
+		
+//		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+////		
 //		
 //		System.out.println(test(3));
 //		
@@ -77,10 +83,10 @@ public class TestPage {
 		//String[] b = {"a"};
 		//String c = b[0];
 		
-		String a =  "apple";
-		String b = "Apple";
-		
-		System.out.println(a.substring(0,1).equals(b.substring(0,1)));
+//		String a =  "apple";
+//		String b = "Apple";
+//		
+//		System.out.println(a.substring(0,1).equals(b.substring(0,1)));
 		
 		
 		//System.out.println(c.equals(a[0]));

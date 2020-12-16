@@ -5,6 +5,7 @@ package com.test.dcy;
 public class Main {
 	public static void main(String[] args) {
 		
+		
 		Input input = new Input();
 		Exit exit = new Exit();
 		boolean loop = true;
@@ -14,7 +15,7 @@ public class Main {
 			
 			int select = exit.selectExit();
 			//종료하는 경우
-			if (select == 1) loop = false;
+			if (select == 1) loop = false; 
 			
 		}//while
 	}
@@ -35,10 +36,7 @@ public class Main {
 	S ~ ` ! @ # $ % b k ** 
 	B q i t d : = " j h ** 
 	M f ) ; p g s , a o ** 
-	Z u + y r e w - \ |   
-	
-	
-	
- * */
+	Z u + y r e w - \ |   	
+*/
 
 

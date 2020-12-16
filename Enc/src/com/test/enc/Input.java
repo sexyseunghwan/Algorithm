@@ -42,6 +42,9 @@ public class Input {
 				if (resultKey == 1) {
 					//key 값이 중복된경우
 					System.out.println("key의 값은 중복값을 지정할 수 없습니다.");
+				} else if (resultKey == 2) {
+					//아무것도 안넣은 경우 -> ArithmeticException이 발생한다.
+					System.out.println("공백은 입력할 수 없습니다.");
 				} else {
 					//key 값이 이상이 없는 경우
 					inputSecondFlag = false;
