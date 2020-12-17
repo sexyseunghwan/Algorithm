@@ -2,7 +2,7 @@ package com.test.dcy;
 
 public class InputErrorCheck {
 	
-	//들어오는 문자열 체크해준다.
+	//들어오는 문자열 체크해준다. -> 들어오면 안되는 문자열 체크 한번 해주는 역할이다.
 	public int errorcheck(String input) {
 		
 		Dcy dcy = new Dcy();

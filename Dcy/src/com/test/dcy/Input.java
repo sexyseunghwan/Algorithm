@@ -52,33 +52,29 @@ public class Input {
 					//이제 여기서 시작해야한다. -> 암호화 작업 시작
 					Dcy dcyMatrix = new Dcy();
 					Dcystart dcystart = new Dcystart();
-					
+					RandomDcy rdd = new RandomDcy();
 					//예외처리 구문
 					try {
 						
-						String decodeVoca = dcystart.returnDcyCode(dcyMatrix.initialMatrix(), inputPw, inputKey);//오류발생
+						int passOrFail = rdd.checkDcyWord(inputPw);//0 이면 pass 1 이면 fail
+						String decodeVoca = "";//돌려줄 복호화문
 						
-						//복호화값에 null 이 존재하면 랜덤문자열로 돌려줄것이다.
-						RandomDcy rd = new RandomDcy();
-						
-						if (rd.dcyReturnRand(decodeVoca) == 0) {
-							//내부에 null이 없는경우
-							System.out.printf("복호화된 문자열 : %s",decodeVoca);
-							System.out.println();
+						if (passOrFail == 0) {
+							
+							decodeVoca = dcystart.returnDcyCode(dcyMatrix.initialMatrix(), inputPw, inputKey);//오류발생
+							
 						} else {
-							System.out.printf("복호화된 문자열 : %s",rd.randomStringOutput());
+							//여기서 이제 이상한 문자열을 돌려줄것이다.
+							decodeVoca = rdd.strangeWord();
 						}
 						
+						System.out.printf("복호화된 문자열 : %s\n",decodeVoca);
 						
 					} catch(Exception e) {
 						System.out.println("문자열을 복호화하는데에 오류가 발생했습니다.");
 						e.printStackTrace();
-					}
-					
-					
+					}	
 				}
-				
-				
 			}//while
 		}//while
 		

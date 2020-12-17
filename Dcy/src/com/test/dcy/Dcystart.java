@@ -84,10 +84,10 @@ public class Dcystart {
 		String finalCol = "";
 		
 		Dcy dcy = new Dcy();
-		String[] resultVoca = dcy.zeroRowPw;//여기에 문제가있었음.
+		String[] resultVoca = dcy.zeroRowPw;
 		//System.out.println(finalArr.length);
 		
-		while(finalIndex < finalArr.length) {//오류발생 -> 왜 안되는거지 제발
+		while(finalIndex < finalArr.length) {
 			
 			if (finalArr[finalIndex].equals("P")) {
 				break;

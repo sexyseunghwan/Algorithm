@@ -21,6 +21,7 @@ public class Dcy {
 			//public String[] zeroRowPw = {"A","D","F","G","V","X","S","B","M","Z"};
 			//ver2
 			public String[] zeroRowPw = {"@","&","#","!","+","*","x","$","?","X"};
+			public String[] zeroRowPwError = {"@","&","#","!","+","*","x","$","?","X","P"};
 			
 			public String[] innerContents = {"K","Z","W","R","1","F","<","l","c","**",
 											 "9","B","6","C","L","5",".","x","&","**",
@@ -64,8 +65,8 @@ public class Dcy {
 				
 				Dcy dcy = new Dcy();
 				
-				arrPrint(dcy.initialMatrix());
+				//arrPrint(dcy.initialMatrix());
 				
-				
+				System.out.println(dcy.innerContents.length);
 			}
 }

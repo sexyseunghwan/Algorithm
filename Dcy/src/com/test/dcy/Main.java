@@ -23,20 +23,23 @@ public class Main {
 
 //복호화값이 null이 하나라도 나오는경우에는 아무런 문자를 넣어주는걸로 하자
 
-
+// "@","&","#","!","+","*","x","$","?","X"
 
 /* 	
-      A D F G V X S B M Z 
-	A K Z W R 1 F < l c ** 
-	D 9 B 6 C L 5 . x & ** 
-	F Q 7 J P G X > m * ** 
-	G E V Y 3 A N / v z ** 
-	V 8 O D H 0 2 ? ' ( ** 
-	X U 4 I S T M ^ n _ ** 
-	S ~ ` ! @ # $ % b k ** 
-	B q i t d : = " j h ** 
-	M f ) ; p g s , a o ** 
-	Z u + y r e w - \ |   	
+      @ & # ! + * x $ ? X 
+	@ K Z W R 1 F < l c ** 
+	& 9 B 6 C L 5 . x & ** 
+	# Q 7 J P G X > m * ** 
+	! E V Y 3 A N / v z ** 
+	+ 8 O D H 0 2 ? ' ( ** 
+	* U 4 I S T M ^ n _ ] 
+	x ~ ` ! @ # $ % b k [ 
+	$ q i t d : = " j h } 
+	? f ) ; p g s , a o { 
+	X u + y r e w - \ |
+	
+	전혀 알 수 없는 알고리즘으로 향하는데?!;;;   	
+	key 가 아닌값들은 이상하게 돌려주면 되는거 아냐? 맞지 그냥 null 사태를 안만들면 되는거네?!   	
 */
 
 

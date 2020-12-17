@@ -33,5 +33,8 @@ B B F P P
  
 (!finalArr[finalIndex].equals("P")) 
  
+ 
+ XX!X#X*X@XX+X+X!X&XXX*X*X*XXXX@X#X*XXX+X!X&XPXX#X&X&XP
+ 
  * */
  

@@ -22,7 +22,9 @@ public class TestPage {
 		
 		//복호화하는거란 말이지?
 		
-		String a = 
+		String a = null;
+		System.out.println(a == null);
+		
 		
 		
 //		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
