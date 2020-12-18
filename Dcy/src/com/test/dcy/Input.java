@@ -60,11 +60,11 @@ public class Input {
 						String decodeVoca = "";//돌려줄 복호화문
 						
 						if (passOrFail == 0) {
-							
-							decodeVoca = dcystart.returnDcyCode(dcyMatrix.initialMatrix(), inputPw, inputKey);//오류발생
+							//
+							decodeVoca = dcystart.returnDcyCode(dcyMatrix.initialMatrix(), inputPw, inputKey);
 							
 						} else {
-							//여기서 이제 이상한 문자열을 돌려줄것이다.
+							//여기서 이제 이상한 문자열을 돌려줄것이다. -> 여기서는 아예 로그인 자체를 막아야 한다.
 							decodeVoca = rdd.strangeWord();
 						}
 						
