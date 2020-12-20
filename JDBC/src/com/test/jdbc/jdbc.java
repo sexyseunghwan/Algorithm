@@ -13,7 +13,7 @@ public class jdbc {
         
 		try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            String connectionUrl = "jdbc:sqlserver://localhost:8095;database=ADMIN;user=sa;password=Sh@156452";
+            String connectionUrl = "jdbc:sqlserver://localhost:8095;database=ADMIN;user=sa;password=******";
             Connection conn = DriverManager.getConnection(connectionUrl);
             //Statement stmt = conn.createStatement();
             CallableStatement stat = null;
