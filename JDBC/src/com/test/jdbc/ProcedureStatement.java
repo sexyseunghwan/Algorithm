@@ -25,6 +25,7 @@ public class ProcedureStatement {
 			
 			rs = stat.executeQuery();
 			
+			//jdbc ...
 			while (rs.next()) {
 				
 				String num = rs.getString("num");

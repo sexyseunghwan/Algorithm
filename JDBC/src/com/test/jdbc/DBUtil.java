@@ -29,7 +29,8 @@ public class DBUtil {
 		
 		return null;//여기로 오면 접속 실패
 	}
-	
+
+	 
 	
 	public Connection open(String host,String db, String id,String pw) {
 		
