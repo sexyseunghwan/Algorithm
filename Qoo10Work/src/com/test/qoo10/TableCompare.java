@@ -10,7 +10,7 @@ public class TableCompare {
 	// 스테이징에 존재하는 테이블의 정보를 빼오는것
 	public List<String[]> getStaging() throws Exception{
 		
-		BufferedReader readerStaging = new BufferedReader(new FileReader("C:\\test\\app.txt"));
+		BufferedReader readerStaging = new BufferedReader(new FileReader("C:\\test\\staging.txt"));
 		
 		String line = null;
 		
@@ -119,7 +119,7 @@ public class TableCompare {
 	//ERD 에 존재하는 테이블 정보
 	public List<String[]> getErd() throws Exception {
 		
-		BufferedReader readerErd = new BufferedReader(new FileReader("C:\\test\\data.txt"));
+		BufferedReader readerErd = new BufferedReader(new FileReader("C:\\test\\erd.txt"));
 		
 		String line2 = null;
 		
