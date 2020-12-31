@@ -14,7 +14,7 @@ public class JDBCStatement {
 		DBUtil util = new DBUtil();
 		
 		try {
-			//생각이 나기 시작함.
+			//db 연결잼
 			conn = util.open("localhost", "ADMIN", "sa", "java1234");
 			stat = conn.createStatement();
 			
