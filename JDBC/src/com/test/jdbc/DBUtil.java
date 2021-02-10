@@ -10,8 +10,8 @@ public class DBUtil {
 	private Connection conn = null;
 	
 	public Connection open() {//포트를 열어준는 메서드라고 생각하면 된다 -> 로컬 계정 열떄 사용하는 메서드
-		String url = "jdbc:sqlserver://localhost:8095;database=ADMIN";
-		String id = "sa";
+		String url = "jdbc:sqlserver://192.168.35.93:11289;database=ADMIN";
+		String id = "byeanma";
 		String pw = "java1234";
 		
 		
@@ -32,9 +32,10 @@ public class DBUtil {
 
 	 
 	
-	public Connection open(String host,String db, String id,String pw) {
+	public Connection open(String host,String db,String port,String id,String pw) {
 		
-		String url = "jdbc:sqlserver://" + host + ":8095;database=" + db;
+		
+		String url = "jdbc:sqlserver://" + host + ":" + port + ";database=" + db;
 		
 		
 		try {

@@ -17,23 +17,21 @@ public class ProcedureStatement {
 			
 			conn = util.open();
 			
-			String sql = "{call testproc1(?,?)}";
+			String sql = "{call sh_test1(?)}";
 			stat = conn.prepareCall(sql);
 			
 			stat.setString(1,"기획부");
-			stat.setString(2,"대리");
 			
 			rs = stat.executeQuery();
 			
 			//jdbc ...
 			while (rs.next()) {
 				
-				String num = rs.getString("num");
 				String name = rs.getString("name");
 				String buseo = rs.getString("buseo");
 				String jikwi = rs.getString("jikwi");
 				
-				System.out.printf("%s %s %s %s\n",num,name,buseo,jikwi);
+				System.out.printf("%s %s %s\n",name,buseo,jikwi);
 				
 			}
 			

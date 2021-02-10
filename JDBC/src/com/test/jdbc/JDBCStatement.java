@@ -13,9 +13,11 @@ public class JDBCStatement {
 		ResultSet rs = null;
 		DBUtil util = new DBUtil();
 		
+		//String host,String db,String port,String id,String pw
+		
 		try {
 			//db 연결잼
-			conn = util.open("localhost", "ADMIN", "sa", "java1234");
+			conn = util.open("192.168.35.93","ADMIN","11289", "byeanma", "java1234");
 			stat = conn.createStatement();
 			
 			//String sql = "select * from dbo.TBLINSA";
@@ -25,14 +27,9 @@ public class JDBCStatement {
 			
 			while (rs.next()) {
 				
-				//String num = rs.getString("num");
-				//String name = rs.getString("name");
 				
-				//System.out.printf("%s %s\n",num,name);
-				
-				
-				int count = rs.getInt("cnt");				
-				System.out.println(count);
+				//int count = rs.getInt("cnt");				
+				//System.out.println(count);
 
 			}
 			
