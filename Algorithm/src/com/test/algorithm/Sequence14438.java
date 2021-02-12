@@ -61,7 +61,7 @@ public class Sequence14438 {
 
 		int mid = (start + end) / 2;
 		return tree[node] = Math.min(init(start, mid, node * 2), init(mid + 1, end, node * 2 + 1));//재귀적인 방법.
-	}//?!...;
+	}//무슨 말인지 전혀 모르겠다 이말이제...;;
 
 	// left ~ right 중에 최솟값을 반환***
 	public static int query(int start, int end, int node, int left, int right) {
@@ -76,6 +76,7 @@ public class Sequence14438 {
 		int mid = (start + end) / 2;
 		return Math.min(query(start, mid, node * 2, left, right), query(mid + 1, end, node * 2 + 1, left, right));
 	}
+	//?! 도저히 모르겠는데
 	//1 , n , 1 , b , c
 	public static int update(int start, int end, int node, int idx, int val) {
 		if (idx < start || idx > end) {
