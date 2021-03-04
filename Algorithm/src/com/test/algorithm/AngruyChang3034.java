@@ -57,6 +57,7 @@ public class AngruyChang3034 {
 	public static void main(String[] args) throws Exception{
 		m1();
 		//m2();
+		//수정사
 	}
 	
 	private static void m1() throws Exception{
