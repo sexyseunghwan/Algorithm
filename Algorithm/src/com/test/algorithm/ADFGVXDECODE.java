@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+
 //Decryption 을 수행해 줄것이다.
 //XDGVFVVXFGGPXGXXXAVP
 public class ADFGVXDECODE {
