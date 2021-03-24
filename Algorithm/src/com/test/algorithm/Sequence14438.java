@@ -76,7 +76,7 @@ public class Sequence14438 {
 		int mid = (start + end) / 2;
 		return Math.min(query(start, mid, node * 2, left, right), query(mid + 1, end, node * 2 + 1, left, right));
 	}
-	//?! 도저히 모르겠는데
+	
 	//1 , n , 1 , b , c
 	public static int update(int start, int end, int node, int idx, int val) {
 		if (idx < start || idx > end) {

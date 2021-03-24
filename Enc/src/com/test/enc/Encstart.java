@@ -98,10 +98,10 @@ public class Encstart {
 			}	
 		}//for
 		
-		
-		
 		return naturalPrint(finalArr);
 	}
+	
+	
 	
 	public static void main(String[] args) {
 		//테스트용
