@@ -10,7 +10,7 @@ public class UsualBackPack12865 {
 	
 	public static int[] weightArr;
 	public static int[] valArr;
-	public static Integer[][] matrix;
+	public static int[][] matrix;
 	
 	public static void main(String[] args) throws Exception {
 	
@@ -22,7 +22,7 @@ public class UsualBackPack12865 {
 		int N = Integer.parseInt(inputs[0]);//물품의 수 
 		int W = Integer.parseInt(inputs[1]);//버틸 수 있는 무게
 		
-		matrix = new Integer[N][W+1];  
+		matrix = new int[N][W+1];  
 		
 		weightArr = new int[N];//무게들이 존재
 		valArr = new int[N];//무게에 대응되는 value들 
@@ -47,7 +47,7 @@ public class UsualBackPack12865 {
 			return 0;
 		}
 		//탐색하지 않은 위치
-		if (matrix[N][W] == null) {
+		if (matrix[N][W] == 0) {
 			
 			
 			if (W - weightArr[N] < 0) {
