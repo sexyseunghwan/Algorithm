@@ -4,6 +4,7 @@ import java.util.LinkedList;
 
 public class HashTableTest {
 	
+	//노드 클래스 생성
 	class Node {
 		
 		String key;
@@ -26,7 +27,7 @@ public class HashTableTest {
 	
 	LinkedList<Node>[] data;
 	
-	//hashtable 생성자
+	//hashtable 생성자 -> 초반에 길이를 지정해준다.
 	HashTableTest(int size) {
 		this.data = new LinkedList[size];
 	}
@@ -73,6 +74,7 @@ public class HashTableTest {
 		}
 	}
 	
+	//최종적으로 가져오는 구조를 말하는것
 	String get(String key) {
 		int hashcode = getHashCode(key);//key를 가지고 해시코드를 받아온다.
 		int index = convertToIndex(hashcode);//받아온 해시코드로 저장할 배열방 번호를 받아온다.
