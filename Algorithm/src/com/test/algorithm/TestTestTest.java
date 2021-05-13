@@ -23,10 +23,6 @@ public class TestTestTest {
 		
 		System.out.println(lp.getSize());
 		
-		//LinkedList<String> list = new LinkedList<String>();
-		//list.add(1, "as");
-		
-		//System.out.println(list.get(0));
 		
 		
 	}
