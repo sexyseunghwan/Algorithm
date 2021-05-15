@@ -14,7 +14,7 @@ public class LinkedListPractice {
 	//노드 객체 생성
 	private class Node {
 		private Object data;//오브젝트 객체를 넣어주고 있는걸 볼 수 있다.
-		private Node next;//객체 내에 다시 자신의 객체를 참조해주고 있다. -> 다음노드를 지목하는 포인터 역할
+		private Node next;//객체 내에 다시 자신의 객체를 참조해주고 있다. -> 다음노드를 지목하는 포인터 역할을 수행한다.
 		
 		public Node (Object input) {//생성자
 			this.data = input;
