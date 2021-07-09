@@ -21,24 +21,24 @@ public class SegmentTree {
 		init(1,N,1);
 		
 		
-//		for (int i = 0; i < tree.length; i++) {
-//			System.out.print(tree[i] + " ");
-//		}
+		for (int i = 0; i < tree.length; i++) {
+			System.out.print(tree[i] + " ");
+		}
 		
  		
 	}
 	
 	
 	public static int init(int start, int end, int node) {
+		
 		if (start == end) {
-			//System.out.println("node : " + node + ",start : " + start);
+			//System.out.println("**node : " + node + ",start : " + start + " end : " + end);
 			return tree[node] = arr[start];
 		}
-
+		
 		int mid = (start + end) / 2;
-		//System.out.println("node : " + node + ",start : " + start);
-		return tree[node] = Math.min(init(start, mid, node * 2), init(mid + 1, end, node * 2 + 1));//재귀적인 방법.
+		//System.out.println("node : " + node + ",start : " + start + " end : " + end);
+		//return tree[node] = Math.min(init(start, mid, node * 2), init(mid + 1, end, node * 2 + 1));//재귀적인 방법.
+		return tree[node] = init(start,mid,node*2) + init(mid+1,end,node*2 + 1);
 	}//무슨 말인지 전혀 모르겠다 이말이제...;;
-	
-
 }

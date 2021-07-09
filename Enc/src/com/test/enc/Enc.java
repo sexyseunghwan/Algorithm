@@ -19,6 +19,7 @@ public class Enc {
 		
 		//ver1
 		//String[] standard = {"A","D","F","G","V","X","S","B","M","Z"};
+		
 		//ver2
 		public String[] standard = {"@","&","#","!","+","*","x","$","?","X"};
 		
@@ -54,7 +55,7 @@ public class Enc {
 			
 			return initialMatrix;
 			
-		}
+		}//initialMatrix()
 		
 		public static void main(String[] args) {
 			//확인용
