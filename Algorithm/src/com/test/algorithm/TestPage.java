@@ -15,14 +15,7 @@ public class TestPage {
 		
 		
 		
-		String email = "ssh9308@naver.com";
-		
-		StringTokenizer stk = new StringTokenizer(email,"@");
-		String userId = stk.nextToken();
-		String userAddress = stk.nextToken();
-		
-		System.out.println(userId);
-		System.out.println(userAddress);
+		System.out.println("asd");
 		
 		
 		
