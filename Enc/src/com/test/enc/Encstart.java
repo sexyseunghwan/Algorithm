@@ -12,6 +12,7 @@ public class Encstart {
 		System.out.println(arr);
 		
 	}
+	//애가 뭐하는 역할이지?
 	public String naturalPrint(List<String> arr) {
 		
 		String answer = "";
@@ -98,10 +99,10 @@ public class Encstart {
 			}	
 		}//for
 		
-		
-		
 		return naturalPrint(finalArr);
 	}
+	
+	
 	
 	public static void main(String[] args) {
 		//테스트용
